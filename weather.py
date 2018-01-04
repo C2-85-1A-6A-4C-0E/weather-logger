@@ -13,9 +13,10 @@ def main():
         timestamp = parse_timestamp(i['startTime'])
         info = [ current_time, parse_windspeed(i['windSpeed']), i['temperature'] ]
         save_data( timestamp, info )
-        print('\n---------------------\n')
-        
+        print('\n---------------------\n')        
     os.remove('hourly')
+    os.system("rm hourly*")
+
 
 
 def parse_windspeed(data):
